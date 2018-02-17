@@ -5,7 +5,7 @@ var fs = require('fs');
 const port = process.env.PORT || 3000;
 var app = express();
 
-hbs.registerPartials(__dirname + '/partials' )
+hbs.registerPartials(__dirname + '/views/partials/' )
 app.set('view engine','hbs');
 
 // record log
@@ -36,6 +36,7 @@ hbs.registerHelper('getCurrentYear', () => {
 hbs.registerHelper('screamIt', (text) => {
   return text.toUpperCase();
 })
+
 app.get('/', (req, res) => {
   res.render('home.hbs', {
     pageTitle: 'Home page',
